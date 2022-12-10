@@ -45,7 +45,7 @@ class AlertsAdapter : RecyclerView.Adapter<AlertsAdapter.AlertViewHolder>() {
         Picasso
             .get()
             .load(RANDOM_IMAGE_URL)
-            .stableKey(UUID.randomUUID().toString())
+            .stableKey(position.toString())
             .placeholder(R.drawable.placeholder_300)
             .resize(100, 150)
             .into(holder.image)

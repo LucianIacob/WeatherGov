@@ -5,12 +5,32 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="15dp"
     tools:context=".ui.activity.WeatherListActivity">
+
+    <TextView
+        android:id="@+id/headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/jetbrains_mono_extrabold"
+        android:text="@string/headline"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="15dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/alertsList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headline"
         tools:itemCount="10"
         tools:listitem="@layout/alert_layout" />
 
@@ -22,12 +42,11 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="22sp"
-        android:typeface="serif"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headline"
         tools:text="@tools:sample/lorem[10]"
         tools:visibility="visible" />
 
@@ -36,11 +55,11 @@
         style="?android:attr/indeterminateProgressStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:indeterminate="true"
         android:indeterminateTint="@android:color/holo_blue_dark"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headline"
         tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

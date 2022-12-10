@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WeatherGov</string>
+    <string name="headline">National Oceanic and Atmospheric Administration\n\nNational Weather Service</string>
+    <string name="event">Event: %1$s</string>
+    <string name="sender">Sender: %1$s</string>
+    <string name="effective">Effective: %1$s</string>
+    <string name="ends">Ends: %1$s</string>
+    <string name="duration">Duration: %1$s</string>
 </resources>

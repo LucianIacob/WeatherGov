@@ -1,13 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp">
 
-    <TextView
-        android:id="@+id/event"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/event"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/denk_one"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/senderName"
+            app:layout_constraintLeft_toRightOf="@id/image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Event: Special Weather Statement" />
+
+        <TextView
+            android:id="@+id/senderName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="#003549"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/effective"
+            app:layout_constraintLeft_toLeftOf="@id/event"
+            app:layout_constraintRight_toRightOf="@id/event"
+            app:layout_constraintTop_toBottomOf="@id/event"
+            tools:text="From: NWS Albuquerque NM" />
+
+        <TextView
+            android:id="@+id/effective"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/end"
+            app:layout_constraintLeft_toLeftOf="@id/event"
+            app:layout_constraintRight_toRightOf="@id/event"
+            app:layout_constraintTop_toBottomOf="@id/senderName"
+            app:layout_goneMarginBottom="5dp"
+            tools:text="Effective: December 9, 2022" />
+
+        <TextView
+            android:id="@+id/end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/duration"
+            app:layout_constraintLeft_toLeftOf="@id/event"
+            app:layout_constraintRight_toRightOf="@id/event"
+            app:layout_constraintTop_toBottomOf="@id/effective"
+            app:layout_goneMarginBottom="5dp"
+            tools:text="End: December 12, 2022" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/event"
+            app:layout_constraintRight_toRightOf="@id/event"
+            app:layout_constraintTop_toBottomOf="@id/end"
+            tools:text="Duration: 3 days" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

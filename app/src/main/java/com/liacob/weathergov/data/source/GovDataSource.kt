@@ -21,8 +21,8 @@ class GovDataSource {
             )
         }
         install(Logging) {
-            logger = Logger.ANDROID
-            level = LogLevel.ALL
+            logger = Logger.SIMPLE
+            level = LogLevel.BODY
         }
         install(HttpRequestRetry) {
             retryOnServerErrors(maxRetries = 3)
